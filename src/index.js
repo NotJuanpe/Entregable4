@@ -11,7 +11,12 @@ const crearArchivo = async(datos) =>{
 
 class ProductManager{
 
+    idAutoincremental = 0
     productos = []
+
+    productosLenght(){
+        return this.productos.length
+    }
 
     addProducts(title,description,price,thumbnail,code,stock){
 
@@ -30,20 +35,27 @@ class ProductManager{
         
     }
 
-    getProducts(){
-        console.log(this.productos)
+    getProducts(limit){
+
+        let produtosADevolver = []
+
+        for(var i = 0;i < limit;i++){
+            produtosADevolver.push(this.productos[i])
+        }
+
+        return produtosADevolver
     }
 
     generateUniqueId(){
-        let name = Math.floor((1 + Math.random()) * 0x10000000000).toString(16).substring(1);
-        //id generado automaticamente se sugiere cambiarlo a otro para que sea constante y mas facil de buscar para probar el
-        return name    
+        let id = this.idAutoincremental
+        this.idAutoincremental = this.idAutoincremental + 1
+        return id
     }
     
     getProductById(id){
         for(const producto of this.productos){
             if(producto.id == id){
-                console.log(producto)
+                return producto
             }else{
                 console.error("No se encontro el producto buscado")
             }
@@ -57,7 +69,4 @@ class ProductManager{
     }
 }
 
-
-tienda = new ProductManager
-tienda.addProducts('Ps5','Consola Ps5', 450,'img.png','p2341',23)
-tienda.getProductById()
+module.exports = ProductManager
