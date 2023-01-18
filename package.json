@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NotJuanpe/Entrgable3.git"
+    "url": "git+https://github.com/NotJuanpe/Entregable4.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NotJuanpe/Entregable3/issues"
+    "url": "https://github.com/NotJuanpe/Entregable4/issues"
   },
-  "homepage": "https://github.com/NotJuanpe/Entregable3#readme",
+  "homepage": "https://github.com/NotJuanpe/Entregable4#readme",
   "dependencies": {
     "express": "^4.18.2",
     "express-load": "^1.1.16"

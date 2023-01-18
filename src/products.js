@@ -67,6 +67,16 @@ class ProductManager{
         let resultado = await fs.promises.readFile('./datos.txt','utf-8')
         resultado = await fs.promises.readFile('./datos.txt','utf-8')
     }
+
+    deleteProduct(id){
+
+        if(id >= this.productos.length){
+            return `No existe producto con id ${id}`
+        }
+
+        this.productos.splice(id,1)
+        return `Se elimino el producto con id ${id}`
+    }
 }
 
 module.exports = ProductManager
